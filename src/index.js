@@ -1,3 +1,7 @@
+// Tutorial based on this course:
+// https://www.youtube.com/watch?v=FqSabub_yNI&ab_channel=CoderOne
+
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';

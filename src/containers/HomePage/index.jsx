@@ -4,6 +4,7 @@ import { createSelector } from 'reselect';
 import { makeSelectUsers } from './selectors';
 import { setUsers } from './actions';
 import Axios from 'axios';  // API support
+import { UsersList } from './usersList';
 
 // define the state of a variable with the selection function and a call backfundion
 // this takes the object of the homePage store state and creates an object out of the users object within the homePage object
@@ -45,5 +46,7 @@ export function HomePage(props) {
 
         console.log("Users:" , users)
 
-    return <div>Hello World!</div>;
+    return <div><UsersList>
+
+    </UsersList></div>;
 }

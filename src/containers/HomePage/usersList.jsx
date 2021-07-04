@@ -3,6 +3,7 @@ import { createSelector } from 'reselect';
 import { useSelector } from 'react-redux';
 import { makeSelectUsers } from './selectors';
 import styled from "styled-components"
+import { useHistory } from 'react-router';
 
 const UsersContainer = styled.div`
 width: 100%;
@@ -39,13 +40,20 @@ export function UsersList(props) {
 
 const isEmptyUsers = !users || (users && users.length === 0);
 
+const history = useHistory(); //useHistory() froms from the html5 
+
+const gotoUserPage = (id) => {
+    history.push(`/user/${id}`);
+
+} 
+
 // if no users:
 if(isEmptyUsers)
     return null;
 
     return <UsersContainer>
         {users.map((user, idx) => (
-            <UserWrapper key={idx}>
+            <UserWrapper key={idx} onClick={() =>gotoUserPage(user.id)}>
                 <UserImage>
                     <img src={user.avatar} />
                 </UserImage>

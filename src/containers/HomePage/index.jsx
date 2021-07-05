@@ -26,7 +26,7 @@ export function HomePage(props) {
     // to the react-redux useSelector (a hooks technique) which returns the users
     //value from the store
     const { users } = useSelector(userStateSelector);  //grabs the redux store and provides it with the stateSelector
-    const { setUser} = actionDispatch(useDispatch());
+    const { setUser } = actionDispatch(useDispatch()); // useDispatch allows us to set the data into the reducer
 
     const fetchUsers = async () => {
         const response = await Axios.get("https://reqres.in/api/users?page=2").catch(

@@ -41,7 +41,7 @@ const stateSelector = createSelector(makeSelectUser, (user) => ({
 
 const actionDispatch = (dispatch) => ({
     setUser: (user) =>  dispatch(setUser(user)),
-});
+});jjjj
 
 export function UserPage(props) {
     const { user }  = useSelector(stateSelector);
